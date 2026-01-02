@@ -1,0 +1,107 @@
+html, body {
+    height: 100vh;
+    overflow: hidden; /* Όχι σκρολάρισμα σε όλη τη σελίδα */
+}
+
+.grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+        'header header'
+        'nav nav'
+        'aside main'
+        'footer footer';
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+/* --- Scrollable Main Area --- */
+.main {
+    grid-area: main;
+    overflow-y: auto; /* Μόνο εδώ επιτρέπεται το σκρολάρισμα  */
+    padding: 15px;
+}
+
+/* --- Responsive 768px (Mobile/Tablet) --- */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-areas:
+            'header'
+            'nav'
+            'main'
+            'footer';
+        grid-template-columns: 1fr;
+    }
+
+    /* 3 Σελίδες πάνω - 2 Κάτω [cite: 6] */
+    .main-menu {
+        display: flex;
+        flex-wrap: wrap; /* Επιτρέπει την αλλαγή σειράς */
+        justify-content: center;
+    }
+
+    .main-menu li {
+        width: 33.33%; /* 3 στοιχεία στην πρώτη σειρά */
+        float: none;
+    }
+
+    .main-menu li:nth-child(n+4) {
+        width: 50%; /* 2 στοιχεία στη δεύτερη σειρά */
+    }
+
+    /* Aside ως Overlay (Slide-in)  */
+    .aside {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 1000;
+        transition: 0.3s ease;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    .aside.active {
+        left: 0;
+    }
+    @media screen and (max-width: 768px) {
+    #aside-menu {
+        position: fixed; /* Σταθερό πάνω από την οθόνη */
+        top: 0;
+        left: 0;
+        width: 70%; /* Να μην πιάνει όλη την οθόνη για να φαίνεται το "εκτός" */
+        height: 100%;
+        z-index: 1000; /* Να είναι πάνω από όλα */
+        background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+        padding-top: 60px; /* Κενό για να μην κρύβεται από το header */
+    }
+}
+
+    /* Hamburger Button (3 lines) */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+        padding: 10px;
+    }
+    .menu-toggle span { width: 25px; height: 3px; background: white; }
+
+    /* Πίνακες: Όχι πλάτος πάνω από την οθόνη [cite: 23, 50] */
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border: 1px solid #ccc;
+    }
+}
+@media (max-width: 768px) {
+    .photo-item {
+        flex: 1 1 100%; /* 1 εικόνα ανά σειρά σε κινητά */
+        max-width: 100%;
+    }
+    
+    .photo-item img {
+        height: 250px; /* Λίγο μεγαλύτερο ύψος στα κινητά */
+    }
+}

@@ -1,0 +1,209 @@
+/* Basic Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f0f0; }
+
+/* Utility Class */
+.hidden { display: none !important; }
+
+/* CSS GRID LAYOUT */
+.grid-container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas:
+        'header header'
+        'nav nav'
+        'aside main'
+        'footer footer';
+    grid-template-columns: 250px 1fr; /* Fixed aside, flexible main */
+    grid-template-rows: auto auto 1fr auto;
+}
+
+/* Grid Areas Styling */
+.header { grid-area: header; background: #2c3e50; color: white; padding: 20px; text-align: center; }
+.nav { grid-area: nav; background: #34495e; overflow: hidden; } /* Overflow hidden clears floats */
+.aside { grid-area: aside; background: #ecf0f1; padding: 20px; border-right: 1px solid #bdc3c7; }
+.main { grid-area: main; background: #ffffff; padding: 20px; }
+.footer { grid-area: footer; background: #2c3e50; color: white; text-align: center; padding: 15px; }
+
+/* --- NAVIGATION (Float Requirement) --- */
+.main-menu { list-style-type: none; }
+.main-menu li { float: left; } /* REQUIRED BY ASSIGNMENT */
+.main-menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.main-menu li a:hover { background-color: #1abc9c; }
+
+/* --- ASIDE MENU --- */
+.aside-group h3 { border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-bottom: 10px; font-size: 1.1em; }
+.aside-group ul { list-style-type: none; }
+.aside-group li a {
+    text-decoration: none;
+    color: #2c3e50;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+.aside-group li a:hover { color: #3498db; padding-left: 5px; transition: 0.3s; }
+
+/* --- 5. Main Content Area & Fixed Gallery --- */
+.main {
+    grid-area: main;
+    padding: 30px;
+    background: #ffffff;
+    overflow-y: auto; /* Μόνο το main σκρολάρει */
+}
+
+/* ΔΙΟΡΘΩΣΗ ΓΚΑΛΕΡΙ (Flexbox) */
+.flex-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Επιτρέπει την αλλαγή σειράς */
+    gap: 20px;
+    justify-content: center;
+}
+
+.photo-item {
+    flex: 0 1 calc(33.33% - 20px); /* 3 εικόνες ανά σειρά */
+    min-width: 280px;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+
+.photo-item img {
+    width: 100%;       /* Γεμίζει το πλάτος της κάρτας */
+    height: 220px;     /* Σταθερό ύψος για όλες τις φωτό */
+    object-fit: cover; /* Κόβει τις άκρες χωρίς να παραμορφώνει την εικόνα */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.photo-item p {
+    font-weight: bold;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* --- TABLES --- */
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+th { background-color: #3498db; color: white; }
+tr:nth-child(even) { background-color: #f2f2f2; }
+
+/* --- FORMS --- */
+input { display: block; width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; }
+button { background: #27ae60; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+button:hover { background: #2ecc71; }
+button.delete-btn { background: #e74c3c; padding: 5px 10px; }
+/* Το χρώμα που έχεις στο hover, το βάζουμε και  iτο active-link */
+.main-menu a.active-link {
+    background-color: #3498db; /* Το χρώμα που χρησιμοποιείς στο hover */
+    color: white;
+    border-radius: 4px;
+}
+
+/* Διασφάλιση ότι η grid διάταξη καλύπτει όλη την οθόνη */
+.grid-container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas:
+        'header header'
+        'nav nav'
+        'aside main'
+        'footer footer';
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+/* Στυλ για το Active Link στο Nav */
+.main-menu a.active-link {
+    background-color: #1abc9c !important; /* Το χρώμα του hover */
+    font-weight: bold;
+}
+
+/* Βελτίωση εμφάνισης πινάκων για Links */
+table a {
+    color: #3498db;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.aside-group ul {
+    list-style: none;
+    padding-top: 10px;
+}
+
+.aside-group li {
+    margin-bottom: 8px;
+}
+
+.aside-group a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.aside-group a:hover {
+    color: #1abc9c;
+    text-decoration: underline;
+}
+/* login style */
+#admin-login {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.login-container {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 30px;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #1abc9c;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+}
+
+.btn-login {
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #1abc9c;
+}
+

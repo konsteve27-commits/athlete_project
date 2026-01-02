@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athlete Biography - Sha'Carri Richardson</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="header-content">
+                <h1>Sha'Carri Richardson</h1>
+                <div class="menu-toggle" onclick="toggleSidebar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+            </div>
+        </header>
+
+        <nav class="nav">
+            <ul class="main-menu">
+                <li><a href="#" onclick="handleNav('bio')">Biography</a></li>
+                <li><a href="#" onclick="handleNav('photos')">Photos</a></li>
+                <li><a href="#" onclick="handleNav('awards')">Awards</a></li>
+                <li><a href="#" onclick="handleNav('links')">Links</a></li>
+                <li><a href="#" onclick="handleNav('admin')">Admin</a></li>
+            </ul>
+        </nav>
+
+        <aside class="aside">
+            <div id="aside-bio" class="aside-group">
+                <h3>Biography Chapters</h3>
+                <ul>
+                    <li><a href="#" onclick="filterBio('all')">Complete Story</a></li>
+                    <li><a href="#" onclick="showSection('bio-early')">Early Life & LSU</a></li>
+                    <li><a href="#" onclick="showSection('bio-career')">Career Overview</a></li>
+                </ul>
+
+                <h3>Career Timeline</h3>
+                <ul>
+                    <li><a href="#" onclick="showSection('bio-2021')">2021: Olympic Trials</a></li>
+                    <li><a href="#" onclick="showSection('bio-2023')">2023: World Champion</a></li>
+                    <li><a href="#" onclick="showSection('bio-2024')">2024: Paris Olympics</a></li>
+                    <li><a href="#" onclick="showSection('bio-2025')">2025: Tokyo Success</a></li>
+                </ul>
+            </div>
+
+            <div id="aside-photos" class="aside-group hidden">
+                <h3>Photo Albums</h3>
+                <ul>
+                    <li><a href="#" onclick="filterPhotos('all')">All Photos</a></li>
+                    <li><a href="#" onclick="filterPhotos('Social')">Social</a></li>
+                    <li><a href="#" onclick="filterPhotos('action')">Action</a></li>
+                </ul>
+            </div>
+
+            <div id="aside-awards" class="aside-group hidden">
+                <h3>Awards Filter</h3>
+                <ul>
+                    <li><a href="#" onclick="fetchData('awards')">All Awards</a></li>
+                    <li><a href="#" onclick="fetchData('awards', 'Gold')">Gold Medals</a></li>
+                    <li><a href="#" onclick="fetchData('awards', 'Silver')">Silver Medals</a></li>
+                    <li><a href="#" onclick="fetchData('awards', 'Bronze')">Bronze Medals</a></li>
+                </ul>
+            </div>
+
+            <div id="aside-links" class="aside-group hidden">
+                <h3>Link Categories</h3>
+                <ul>
+                    <li><a href="#" onclick="fetchData('links')">All Links</a></li>
+                    <li><a href="#" onclick="fetchData('links', 'social')">Social Media</a></li>
+                    <li><a href="#" onclick="fetchData('links', 'Video')">Videos</a></li>
+                    <li><a href="#" onclick="fetchData('links', 'Link')">Links</a></li>
+                </ul>
+            </div>
+
+            <div id="aside-admin" class="aside-group hidden">
+                <h3>Management</h3>
+                <ul>
+                    <li id="li-login"><a href="#" onclick="showSection('admin-login')">Login</a></li>
+                    <li id="li-logout" class="hidden"><a href="#" onclick="logout()">Logout</a></li>
+                    <li class="admin-only hidden"><a href="#" onclick="showSection('admin-panel')">Dashboard</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div id="bio-early" class="content-section">
+                <h2>Early Life</h2>
+                <p>Sha'Carri Richardson was born in Dallas, Texas, and raised by her supportive grandmother, Betty Harp,
+                    and aunt, Shayaria, after a difficult relationship with her biological parents; she became a track
+                    star at Carter High School, winning national titles in middle school before dominating in high
+                    school and briefly at LSU, setting the stage for her professional career despite early family
+                    hardships and self-doubt. </p>
+            </div>
+            <div id="bio-career" class="content-section hidden">
+                <h2>Professional Career</h2>
+                <p>Who is Sha'Carri Richardson? All About the Fastest Woman in ...Sha'Carri Richardson's early
+                    professional career exploded in 2019 after a sensational freshman year at LSU, where she set NCAA
+                    records in the 100m (10.75s) and 200m, earning The Bowerman award before turning pro, stunning the
+                    track world with her speed, distinct style, and immediately running world-class times, establishing
+                    herself as a dominant force and cultural icon in sprinting. </p>
+            </div>
+            <div id="bio-all" class="content-section hidden">
+                <h2>Full Biography</h2>
+                <div id="bio-all-content"></div>
+            </div>
+            <div id="bio-2021" class="content-section hidden">
+                <h2>2021: Trials and Tribulations</h2>
+                <p>In April 2021, Richardson clocked 10.72 seconds, becoming the sixth-fastest woman ever at the time.
+                    She won the 100m at the U.S. Olympic Trials with 10.86s. However, her victory was invalidated
+                    following a positive test for cannabis, which she used to cope with the loss of her biological
+                    mother. This led to a one-month suspension, causing her to miss the Tokyo Olympics.</p>
+            </div>
+
+            <div id="bio-2023" class="content-section hidden">
+                <h2>2023: World Championship Dominance</h2>
+                <p>The year 2023 marked Richardson's ultimate comeback. In July, she became the US national champion
+                    with 10.82s. In August, at the World Athletics Championships in Budapest, she won the 100m Gold from
+                    Lane 9, setting a championship record of 10.65s. She also anchored Team USA to Gold in the 4x100m
+                    relay (41.03s) and secured a Bronze in the 200m.</p>
+            </div>
+
+            <div id="bio-2024" class="content-section hidden">
+                <h2>2024: Olympic Glory in Paris</h2>
+                <p>Richardson defended her US 100m title with a world-leading 10.71s. At the Paris Olympics, she secured
+                    the Silver medal in the 100m. Her standout moment came in the 4x100m relay where, as the anchor, she
+                    propelled the U.S. from third to first place, clinching her first Olympic Gold medal and creating an
+                    iconic "stare-down" moment at the finish line.</p>
+            </div>
+
+            <div id="bio-2025" class="content-section hidden">
+                <h2>2025: Continuing the Legacy</h2>
+                <p>In 2025, Richardson continued her international dominance. At the World Athletics Championships in
+                    Tokyo, she remained a key pillar for Team USA. She helped secure another Gold medal in the women's
+                    4x100m relay with a time of 41.75 seconds, maintaining her status as one of the fastest and most
+                    influential relay anchors in history.</p>
+            </div>
+
+            <div id="photos-view" class="content-section hidden">
+                <h2 id="photos-title">Gallery</h2>
+                <div id="photos-container" class="flex-gallery"></div>
+            </div>
+
+            <div id="dynamic-view" class="content-section hidden">
+                <h2 id="dynamic-title">Data View</h2>
+                <div id="table-container"></div>
+            </div>
+
+            <div id="admin-login" class="content-section hidden">
+                <div class="login-container">
+                    <h2>Admin Login</h2>
+                    <form id="login-form" onsubmit="handleLogin(event)">
+                        <input type="text" id="username" placeholder="Username" required>
+                        <input type="password" id="password" placeholder="Password" required>
+                        <button type="submit" class="btn-login">Login to Platform</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="admin-panel" class="content-section hidden">
+                <h2>Admin Dashboard</h2>
+                <div id="admin-table-container"></div>
+                <hr style="margin: 30px 0;">
+                <div id="admin-links-container"></div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; Athlete bio </p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
