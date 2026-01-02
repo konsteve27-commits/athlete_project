@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Instagram ",
+    "url": "https://www.instagram.com/itsshacarri/",
+    "type": "social",
+    "id": 201
+  },
+  {
+    "title": "Twitter / X Profile",
+    "url": "https://x.com/itsshacarri?lang=el",
+    "type": "social",
+    "id": 202
+  },
+  {
+    "title": "World Title 10.65s ",
+    "url": "https://youtu.be/g73PMrqkKzk?si=d-4ROmUwEoY4VtBD",
+    "type": "video",
+    "id": 203
+  },
+  {
+    "title": "Olympic Official ",
+    "url": "https://www.olympics.com/en/news/sha-carri-richardson-headlines-women-100m-prefontaine-classic-knighton-coleman",
+    "type": "link",
+    "id": 205
+  },
+  {
+    "title": "World Athletics ",
+    "url": "https://worldathletics.org/athletes/united-states/shacarri-richardson-14717691",
+    "type": "link",
+    "id": 206
+  }
+]
