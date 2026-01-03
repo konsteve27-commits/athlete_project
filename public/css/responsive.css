@@ -1,8 +1,7 @@
 html, body {
-    height: 100vh;
-    overflow: hidden; /* Όχι σκρολάρισμα σε όλη τη σελίδα */
+    min-height: 100vh;
+    overflow-x: hidden; 
 }
-
 .grid-container {
     display: grid;
     height: 100vh;
@@ -18,7 +17,7 @@ html, body {
 /* --- Scrollable Main Area --- */
 .main {
     grid-area: main;
-    overflow-y: auto; /* Μόνο εδώ επιτρέπεται το σκρολάρισμα  */
+    overflow-y: auto; 
     padding: 15px;
 }
 
@@ -36,17 +35,17 @@ html, body {
     /* 3 Σελίδες πάνω - 2 Κάτω [cite: 6] */
     .main-menu {
         display: flex;
-        flex-wrap: wrap; /* Επιτρέπει την αλλαγή σειράς */
+        flex-wrap: wrap; 
         justify-content: center;
     }
 
     .main-menu li {
-        width: 33.33%; /* 3 στοιχεία στην πρώτη σειρά */
+        width: 33.33%; 
         float: none;
     }
 
     .main-menu li:nth-child(n+4) {
-        width: 50%; /* 2 στοιχεία στη δεύτερη σειρά */
+        width: 50%; 
     }
 
     /* Aside ως Overlay (Slide-in)  */
@@ -66,15 +65,15 @@ html, body {
     }
     @media screen and (max-width: 768px) {
     #aside-menu {
-        position: fixed; /* Σταθερό πάνω από την οθόνη */
+        position: fixed;
         top: 0;
         left: 0;
-        width: 70%; /* Να μην πιάνει όλη την οθόνη για να φαίνεται το "εκτός" */
+        width: 70%; 
         height: 100%;
-        z-index: 1000; /* Να είναι πάνω από όλα */
+        z-index: 1000; 
         background-color: #fff;
         box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-        padding-top: 60px; /* Κενό για να μην κρύβεται από το header */
+        padding-top: 60px;
     }
 }
 
@@ -88,7 +87,7 @@ html, body {
     }
     .menu-toggle span { width: 25px; height: 3px; background: white; }
 
-    /* Πίνακες: Όχι πλάτος πάνω από την οθόνη [cite: 23, 50] */
+   
     .table-wrapper {
         width: 100%;
         overflow-x: auto;
@@ -97,11 +96,12 @@ html, body {
 }
 @media (max-width: 768px) {
     .photo-item {
-        flex: 1 1 100%; /* 1 εικόνα ανά σειρά σε κινητά */
+        flex: 1 1 100%; 
         max-width: 100%;
     }
     
     .photo-item img {
-        height: 250px; /* Λίγο μεγαλύτερο ύψος στα κινητά */
+        height: 250px; 
     }
 }
+
