@@ -1,12 +1,11 @@
-/* Basic Reset */
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f0f0; }
 
-/* Utility Class */
 .hidden { display: none !important; }
 
-/* CSS GRID LAYOUT */
+
 .grid-container {
     display: grid;
     min-height: 100vh;
@@ -15,20 +14,20 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-
         'nav nav'
         'aside main'
         'footer footer';
-    grid-template-columns: 250px 1fr; /* Fixed aside, flexible main */
+    grid-template-columns: 250px 1fr; 
     grid-template-rows: auto auto 1fr auto;
 }
 
 /* Grid Areas Styling */
 .header { grid-area: header; background: #2c3e50; color: white; padding: 20px; text-align: center; }
-.nav { grid-area: nav; background: #34495e; overflow: hidden; } /* Overflow hidden clears floats */
+.nav { grid-area: nav; background: #34495e; overflow: hidden; } 
 .aside { grid-area: aside; background: #ecf0f1; padding: 20px; border-right: 1px solid #bdc3c7; }
 .main { grid-area: main; background: #ffffff; padding: 20px; }
 .footer { grid-area: footer; background: #2c3e50; color: white; text-align: center; padding: 15px; }
 
-/* --- NAVIGATION (Float Requirement) --- */
+
 .main-menu { list-style-type: none; }
-.main-menu li { float: left; } /* REQUIRED BY ASSIGNMENT */
+.main-menu li { float: left; }
 .main-menu li a {
     display: block;
     color: white;
@@ -55,19 +54,19 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-
     grid-area: main;
     padding: 30px;
     background: #ffffff;
-    overflow-y: auto; /* Μόνο το main σκρολάρει */
+    overflow-y: auto;
 }
 
 /* ΔΙΟΡΘΩΣΗ ΓΚΑΛΕΡΙ (Flexbox) */
 .flex-gallery {
     display: flex;
-    flex-wrap: wrap; /* Επιτρέπει την αλλαγή σειράς */
+    flex-wrap: wrap; 
     gap: 20px;
     justify-content: center;
 }
 
 .photo-item {
-    flex: 0 1 calc(33.33% - 20px); /* 3 εικόνες ανά σειρά */
+    flex: 0 1 calc(33.33% - 20px); 
     min-width: 280px;
     background: #fff;
     padding: 15px;
@@ -79,9 +78,9 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-
 
 
 .photo-item img {
-    width: 100%;       /* Γεμίζει το πλάτος της κάρτας */
-    height: 220px;     /* Σταθερό ύψος για όλες τις φωτό */
-    object-fit: cover; /* Κόβει τις άκρες χωρίς να παραμορφώνει την εικόνα */
+    width: 100%;      
+    height: 220px;    
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
     display: block;
@@ -111,7 +110,7 @@ button.delete-btn { background: #e74c3c; padding: 5px 10px; }
     border-radius: 4px;
 }
 
-/* Διασφάλιση ότι η grid διάταξη καλύπτει όλη την οθόνη */
+
 .grid-container {
     display: grid;
     min-height: 100vh;
@@ -124,9 +123,9 @@ button.delete-btn { background: #e74c3c; padding: 5px 10px; }
     grid-template-rows: auto auto 1fr auto;
 }
 
-/* Στυλ για το Active Link στο Nav */
+
 .main-menu a.active-link {
-    background-color: #1abc9c !important; /* Το χρώμα του hover */
+    background-color: #1abc9c !important; 
     font-weight: bold;
 }
 
@@ -206,4 +205,5 @@ table a {
 .btn-login:hover {
     background-color: #1abc9c;
 }
+
 
